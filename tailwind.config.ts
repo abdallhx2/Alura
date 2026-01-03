@@ -11,9 +11,21 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        muted: "var(--muted)",
+        accent: "var(--accent)",
+      },
+      fontFamily: {
+        display: ["var(--font-playfair)", "serif"],
+        body: ["var(--font-inter)", "sans-serif"],
+        arabic: ["var(--font-ibm-arabic)", "sans-serif"],
+      },
+      letterSpacing: {
+        widest: "0.25em",
+        ultra: "0.35em",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
