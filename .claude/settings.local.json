@@ -9,7 +9,9 @@
       "Bash(set CI=true)",
       "Bash(npx next build)",
       "Bash(npx tsc:*)",
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "Bash(dir:*)",
+      "Bash(del \"d:\\\\PrimaryProject\\\\lura\\\\src\\\\app\\\\favicon.ico\")"
     ]
   }
 }

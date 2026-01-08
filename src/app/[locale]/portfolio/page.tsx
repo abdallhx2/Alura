@@ -12,19 +12,19 @@ export default function PortfolioPage() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const images = [
-    { src: "/images/our-work/1.png", number: "01" },
-    { src: "/images/our-work/2.png", number: "02" },
-    { src: "/images/our-work/3.png", number: "03" },
-    { src: "/images/our-work/4.png", number: "04" },
-    { src: "/images/our-work/5.png", number: "05" },
-    { src: "/images/our-work/6.png", number: "06" },
-    { src: "/images/our-work/7.png", number: "07" },
+    { src: "/images/our-work/1.png" },
+    { src: "/images/our-work/2.png" },
+    { src: "/images/our-work/3.png" },
+    { src: "/images/our-work/4.png" },
+    { src: "/images/our-work/5.png" },
+    { src: "/images/our-work/6.png" },
+    { src: "/images/our-work/7.png" },
   ];
 
   const videos = [
-    { src: "/videos/our-work/1.mp4", thumbnail: "/images/our-work/1.png", number: "01" },
-    { src: "/videos/our-work/2.mp4", thumbnail: "/images/our-work/2.png", number: "02" },
-    { src: "/videos/our-work/3.mp4", thumbnail: "/images/our-work/3.png", number: "03" },
+    { src: "/videos/our-work/1.mp4", thumbnail: "/images/our-work/1.png" },
+    { src: "/videos/our-work/2.mp4", thumbnail: "/images/our-work/2.png" },
+    { src: "/videos/our-work/3.mp4", thumbnail: "/images/our-work/3.png" },
   ];
 
   return (
@@ -37,7 +37,6 @@ export default function PortfolioPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <span className="section-number">{t("sectionNumber")}</span>
           <h1 className="text-4xl md:text-6xl font-display uppercase tracking-widest mt-4 mb-8">
             {t("heading")}
           </h1>
@@ -56,7 +55,6 @@ export default function PortfolioPage() {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <span className="section-number">01</span>
           <h2 className="text-2xl md:text-4xl font-display uppercase tracking-widest mt-4">
             {t("videoWork")}
           </h2>
@@ -74,10 +72,10 @@ export default function PortfolioPage() {
               onClick={() => setSelectedVideo(video.src)}
             >
               <Image
-                src={video.thumbnail}
-                alt={`Video ${video.number}`}
+                src="/images/portfolio-bw.png"
+                alt="Luxury Brand Project"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-background/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="w-16 h-16 rounded-full bg-foreground/20 backdrop-blur-sm flex items-center justify-center">
@@ -85,7 +83,7 @@ export default function PortfolioPage() {
                 </div>
               </div>
               <span className="absolute bottom-4 left-4 section-number">
-                {video.number}
+                {index + 1}
               </span>
             </motion.div>
           ))}
@@ -102,7 +100,6 @@ export default function PortfolioPage() {
             transition={{ duration: 0.8 }}
             className="mb-12"
           >
-            <span className="section-number">02</span>
             <h2 className="text-2xl md:text-4xl font-display uppercase tracking-widest mt-4">
               {t("socialPosts")}
             </h2>
@@ -121,12 +118,12 @@ export default function PortfolioPage() {
               >
                 <Image
                   src={image.src}
-                  alt={`Work ${image.number}`}
+                  alt={`Work ${index + 1}`}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-background/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-2xl font-display">{image.number}</span>
+                  <span className="text-2xl font-display">{index + 1}</span>
                 </div>
               </motion.div>
             ))}
@@ -143,7 +140,6 @@ export default function PortfolioPage() {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <span className="section-number">03</span>
           <h2 className="text-2xl md:text-4xl font-display uppercase tracking-widest mt-4">
             {t("exampleFeeds")}
           </h2>

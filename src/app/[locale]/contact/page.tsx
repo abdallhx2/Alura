@@ -75,11 +75,10 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <span className="section-number">{t("contact.sectionNumber")}</span>
           <h1 className="text-4xl md:text-6xl font-display uppercase tracking-widest mt-4 mb-8">
             {t("contact.heading")}
           </h1>
-          <p className="text-muted text-lg">{t("contact.description")}</p>
+          <p className="text-white/80 text-lg">{t("contact.description")}</p>
         </motion.div>
       </section>
 
@@ -181,9 +180,9 @@ export default function ContactPage() {
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <info.icon size={24} className="text-muted flex-shrink-0 mt-1" />
+                    <info.icon size={24} className="text-white/80 flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-sm uppercase tracking-widest text-muted mb-1">
+                      <p className="text-sm uppercase tracking-widest text-white/80 mb-1">
                         {info.label}
                       </p>
                       {info.href ? (
@@ -209,7 +208,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-display uppercase tracking-widest mb-4">
                 {t("contact.workingHours.title")}
               </h3>
-              <div className="space-y-2 text-muted">
+              <div className="space-y-2 text-white/80">
                 <p>{t("contact.workingHours.weekdays")}</p>
                 <p>{t("contact.workingHours.weekends")}</p>
               </div>

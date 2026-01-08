@@ -3,12 +3,15 @@
     "siteName": "ALOURA",
     "tagline": "Creative House",
     "cta": "Let's Build Together",
+    "ctaSubheading": "Ready to elevate your brand? Get in touch with us today",
     "learnMore": "Learn More",
     "viewWork": "View Our Work",
     "getInTouch": "Get In Touch",
     "sendMessage": "Send Message",
     "crafted": "Crafted in KSA",
-    "allRights": "All Rights Reserved"
+    "allRights": "All Rights Reserved",
+    "developedBy": "Designed and Developed by",
+    "followUs": "Follow Us"
   },
   "nav": {
     "home": "Home",
@@ -24,7 +27,6 @@
   },
   "about": {
     "title": "About Us",
-    "sectionNumber": "01",
     "heading": "Who We Are",
     "content": "At ALOURA Creative House, we embrace a holistic approach that elevates your brand to new horizons. Founded by Lamia Al-Hassani in Saudi Arabia—the cradle of art and beauty—we craft bespoke solutions that redefine how brands connect with their audiences.",
     "content2": "We believe that details make the difference, which is why every brand we handle receives meticulous care. By blending aesthetics with inspiring storytelling in the worlds of fashion, beauty, and lifestyle, we create experiences that truly resonate.",
@@ -37,13 +39,11 @@
       "satisfaction": "Client Satisfaction"
     },
     "founderSection": {
-      "sectionNumber": "02",
       "title": "The Founder",
       "content1": "Lamia Al-Hassani, founder of ALOURA Creative House, combines her passion for creativity with deep expertise in the fashion and beauty industry.",
       "content2": "With a background spanning over seven years in the industry, Lamia established ALOURA to bridge brands with their audiences, focusing on authenticity and creativity."
     },
     "values": {
-      "sectionNumber": "03",
       "title": "Our Values",
       "creativity": {
         "title": "Creativity",
@@ -57,30 +57,104 @@
         "title": "Partnership",
         "description": "We work with you as true partners for success"
       }
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "items": [
+        {
+          "name": "Sarah Al-Ahmad",
+          "role": "Fashion Brand Founder",
+          "content": "ALOURA transformed how we connect with our audience. High professionalism and amazing creative vision."
+        },
+        {
+          "name": "Noura Al-Saeed",
+          "role": "Marketing Director",
+          "content": "An exceptional experience from start to finish. A team that understands the Saudi market."
+        },
+        {
+          "name": "Reem Al-Mutairi",
+          "role": "E-commerce Owner",
+          "content": "The content they created increased our sales by 40%. Thank you ALOURA!"
+        },
+        {
+          "name": "Hind Al-Shammari",
+          "role": "Digital Influencer",
+          "content": "The best team I've worked with. They care about the finest details and deliver on time."
+        },
+        {
+          "name": "Munira Al-Otaibi",
+          "role": "Beauty Salon Owner",
+          "content": "Honestly didn't expect results like this. Quality work from people who truly understand the Saudi market."
+        },
+        {
+          "name": "Abdulaziz Al-Dosari",
+          "role": "Perfume Brand Owner",
+          "content": "From day one, I knew I was in good hands. Fast communication and even faster execution."
+        },
+        {
+          "name": "Latifa Al-Qahtani",
+          "role": "Fashion Designer",
+          "content": "I was hesitant at first, but the results exceeded expectations. They get the Gulf aesthetic."
+        },
+        {
+          "name": "Fahad Al-Malki",
+          "role": "Menswear Brand Founder",
+          "content": "I'm not one for flattery, but working with them is different. Professional from start to finish."
+        },
+        {
+          "name": "Ghada Al-Subaie",
+          "role": "Abaya Store Owner",
+          "content": "They elevated my account significantly. Customers now compliment the content before the product!"
+        },
+        {
+          "name": "Majed Al-Harbi",
+          "role": "Real Estate Marketing Manager",
+          "content": "I've worked with several agencies before, but ALOURA is different. They deliver more than you expect."
+        },
+        {
+          "name": "Amal Al-Zahrani",
+          "role": "Makeup Brand Founder",
+          "content": "So glad we chose them. A team that works with integrity and cares about every detail."
+        },
+        {
+          "name": "Khaled Al-Anazi",
+          "role": "Restaurant Owner",
+          "content": "The content they created brought customers from everywhere. Real results, not just talk."
+        },
+        {
+          "name": "Dalal Al-Rasheed",
+          "role": "Self-Development Coach",
+          "content": "Finally found a team that understands my vision without lengthy explanations. Creative and fast."
+        },
+        {
+          "name": "Yasser Al-Shehri",
+          "role": "Travel Agency Owner",
+          "content": "Working with them made things so much easier. They know the market and how to deliver the message."
+        }
+      ]
     }
   },
   "services": {
     "title": "Our Services",
-    "sectionNumber": "02",
     "heading": "What We Offer",
     "description": "We offer a comprehensive suite of creative services to meet all your brand's needs",
     "service1": {
       "title": "Creative Direction",
-      "description": "Creative direction for brand shoots and campaigns",
+      "description": "We transform your vision into a complete visual reality. From selecting the right team to overseeing every detail on set, we ensure every image reflects your brand identity with professional style worthy of your ambitions.",
       "item1": "On-set styling and art direction",
       "item2": "Location scouting and set design",
       "item3": "Oversight from concept through final delivery"
     },
     "service2": {
       "title": "Content Creation & Development",
-      "description": "Creative copywriting tailored to the brand",
+      "description": "We craft content that tells your brand's story in a way that resonates with your audience. From creative writing to professional photography, we create consistent content that enhances your digital presence and sets you apart.",
       "item1": "Design of posts that reflect brand identity",
       "item2": "High-quality photography & videography",
       "item3": "Trend-driven & market-relevant content ideas"
     },
     "service3": {
       "title": "Social Media Management",
-      "description": "Strategic planning & content scheduling",
+      "description": "We build your digital presence with intelligence and strategy. From planning and scheduling to engaging with your community, we keep your brand voice consistent and effective across all platforms.",
       "item1": "Community management & audience engagement",
       "item2": "Performance reporting & continuous optimization",
       "item3": "Brand voice development and consistency"
@@ -92,7 +166,6 @@
   },
   "portfolio": {
     "title": "Our Work",
-    "sectionNumber": "03",
     "heading": "Portfolio",
     "description": "Browse our collection of outstanding creative and design work",
     "videoWork": "Video Work",
@@ -101,12 +174,12 @@
   },
   "contact": {
     "title": "Contact Us",
-    "sectionNumber": "04",
     "heading": "Let's Build Together",
     "description": "Ready to elevate your brand? Get in touch with us.",
     "form": {
       "name": "Your Name",
       "email": "Your Email",
+      "phone": "Phone Number",
       "message": "Your Message",
       "submit": "Send Message",
       "sending": "Sending...",
@@ -117,6 +190,7 @@
       "email": "info@aloura.agency",
       "location": "Mecca, Saudi Arabia",
       "social": "Follow Us",
+      "contactInfo": "Contact Information",
       "emailLabel": "Email",
       "locationLabel": "Location",
       "instagramLabel": "Instagram"
@@ -130,5 +204,9 @@
   "footer": {
     "copyright": "© 2025 ALOURA. All Rights Reserved.",
     "crafted": "Crafted in KSA"
+  },
+  "marquee": {
+    "services": "Elevating Brands • Crafting Stories • Building Legacies • Creating Impact • Defining Style • Shaping Visions",
+    "tagline": "Fashion & Beauty • Lifestyle & Luxury • Art & Elegance • Vision & Passion • Creativity & Excellence • Dreams & Reality"
   }
 }

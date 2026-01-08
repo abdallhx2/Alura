@@ -15,13 +15,26 @@ const config: Config = {
         accent: "var(--accent)",
       },
       fontFamily: {
-        display: ["var(--font-playfair)", "serif"],
-        body: ["var(--font-inter)", "sans-serif"],
-        arabic: ["var(--font-ibm-arabic)", "sans-serif"],
+        display: ["var(--font-playfair)", "var(--font-amiri)", "serif"],
+        body: ["var(--font-inter)", "var(--font-noto-kufi)", "sans-serif"],
       },
       letterSpacing: {
         widest: "0.25em",
         ultra: "0.35em",
+      },
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
     },
   },

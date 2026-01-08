@@ -1,10 +1,11 @@
-import { Inter, Playfair_Display, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { Inter, Playfair_Display, Noto_Kufi_Arabic, Amiri } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing, getDirection, type Locale } from "@/lib/i18n";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { LenisProvider } from "@/components/providers/LenisProvider";
 import "../globals.css";
 
 const inter = Inter({
@@ -17,10 +18,16 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-const ibmArabic = IBM_Plex_Sans_Arabic({
+const notoKufi = Noto_Kufi_Arabic({
   subsets: ["arabic"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-ibm-arabic",
+  variable: "--font-noto-kufi",
+});
+
+const amiri = Amiri({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  variable: "--font-amiri",
 });
 
 export function generateStaticParams() {
@@ -38,6 +45,29 @@ export async function generateMetadata({
       locale === "ar"
         ? "بيت الإبداع والفخامة - نصنع حلولاً مخصصة تعيد تعريف كيفية تواصل العلامات التجارية مع جمهورها"
         : "Luxury & Creative House - We craft bespoke solutions that redefine how brands connect with their audiences",
+    icons: {
+      icon: "/images/logo.png",
+      shortcut: "/images/logo.png",
+      apple: "/images/logo.png",
+    },
+    openGraph: {
+      title: locale === "ar" ? "ألورا | بيت الإبداع" : "ALOURA | Creative House",
+      description:
+        locale === "ar"
+          ? "بيت الإبداع والفخامة - نصنع حلولاً مخصصة تعيد تعريف كيفية تواصل العلامات التجارية مع جمهورها"
+          : "Luxury & Creative House - We craft bespoke solutions that redefine how brands connect with their audiences",
+      images: ["/images/logo.png"],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: locale === "ar" ? "ألورا | بيت الإبداع" : "ALOURA | Creative House",
+      description:
+        locale === "ar"
+          ? "بيت الإبداع والفخامة - نصنع حلولاً مخصصة تعيد تعريف كيفية تواصل العلامات التجارية مع جمهورها"
+          : "Luxury & Creative House - We craft bespoke solutions that redefine how brands connect with their audiences",
+      images: ["/images/logo.png"],
+    },
   };
 }
 
@@ -58,12 +88,14 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={direction}>
       <body
-        className={`${inter.variable} ${playfair.variable} ${ibmArabic.variable} font-body antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${notoKufi.variable} ${amiri.variable} font-body antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main className="min-h-screen pt-20">{children}</main>
-          <Footer />
+          <LenisProvider>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </LenisProvider>
         </NextIntlClientProvider>
       </body>
     </html>
