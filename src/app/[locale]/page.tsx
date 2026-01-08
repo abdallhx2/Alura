@@ -231,7 +231,7 @@ export default function HomePage() {
           <div className={`relative ${isRTL ? "order-2" : "order-1 lg:order-2"}`}>
             <Image
               src="/images/hero-bw.png"
-              alt="About ALOURA"
+              alt={isRTL ? "فريق ألورا يعمل على مشروع إبداعي في الاستوديو" : "ALOURA team working on creative project in studio"}
               fill
               className="object-cover grayscale brightness-50"
               priority

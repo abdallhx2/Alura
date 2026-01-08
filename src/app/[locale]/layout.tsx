@@ -6,6 +6,7 @@ import { routing, getDirection, type Locale } from "@/lib/i18n";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { LenisProvider } from "@/components/providers/LenisProvider";
+import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/JsonLd";
 import "../globals.css";
 
 const inter = Inter({
@@ -114,6 +115,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={direction}>
+      <head>
+        <OrganizationJsonLd locale={locale} />
+        <WebsiteJsonLd locale={locale} />
+      </head>
       <body
         className={`${inter.variable} ${playfair.variable} ${notoKufi.variable} ${amiri.variable} font-body antialiased`}
       >
