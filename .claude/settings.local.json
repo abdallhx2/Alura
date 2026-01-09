@@ -15,7 +15,8 @@
       "Bash(curl:*)",
       "Bash(ffmpeg:*)",
       "Bash(findstr:*)",
-      "Bash(ffprobe:*)"
+      "Bash(ffprobe:*)",
+      "Bash(git push:*)"
     ]
   }
 }
