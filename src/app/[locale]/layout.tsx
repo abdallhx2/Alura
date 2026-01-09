@@ -31,10 +31,11 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const baseUrl = "https://aloura.agency";
   const title = locale === "ar" ? "ألورا | بيت الإبداع" : "ALOURA | Creative House";
   const description =
@@ -96,11 +97,12 @@ export async function generateMetadata({
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
