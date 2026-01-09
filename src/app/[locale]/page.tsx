@@ -184,7 +184,7 @@ export default function HomePage() {
                     {testimonials.map((item, i) => (
                       <motion.div key={i} whileHover={{ y: -4, scale: 1.01 }} transition={{ duration: 0.2 }} className="group relative overflow-hidden backdrop-blur-sm bg-white/[0.03] border border-white/10 p-5 sm:p-6 mb-4 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300">
                         <div className="absolute -inset-px bg-gradient-to-r from-white/5 via-white/10 to-white/5 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300 pointer-events-none" />
-                        <div className="absolute top-4 right-4 text-4xl font-serif text-white/5 group-hover:text-white/10 transition-colors duration-300 pointer-events-none">"</div>
+                        <div className="absolute top-4 right-4 text-4xl font-serif text-white/5 group-hover:text-white/10 transition-colors duration-300 pointer-events-none">&rdquo;</div>
                         <div className="relative z-10">
                           <div className={`flex items-center gap-4 mb-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                             <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-white/20 to-white/5 backdrop-blur border border-white/10 text-white/90 flex items-center justify-center text-base font-semibold">
@@ -210,7 +210,7 @@ export default function HomePage() {
                       {testimonials.slice(0, 5).map((item, i) => (
                         <motion.div key={i} whileHover={{ y: -4, scale: 1.01 }} transition={{ duration: 0.2 }} className="group relative overflow-hidden backdrop-blur-sm bg-white/[0.03] border border-white/10 p-6 mb-5 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300">
                           <div className="absolute -inset-px bg-gradient-to-r from-white/5 via-white/10 to-white/5 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300 pointer-events-none" />
-                          <div className="absolute top-4 right-4 text-4xl font-serif text-white/5 group-hover:text-white/10 transition-colors duration-300 pointer-events-none">"</div>
+                          <div className="absolute top-4 right-4 text-4xl font-serif text-white/5 group-hover:text-white/10 transition-colors duration-300 pointer-events-none">&rdquo;</div>
                           <div className="relative z-10">
                             <div className={`flex items-center gap-4 mb-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-white/20 to-white/5 backdrop-blur border border-white/10 text-white/90 flex items-center justify-center text-base font-semibold group-hover:from-white/25 group-hover:to-white/10 transition-all duration-300">
@@ -233,7 +233,7 @@ export default function HomePage() {
                       {testimonials.slice(5, 10).map((item, i) => (
                         <motion.div key={i} whileHover={{ y: -4, scale: 1.01 }} transition={{ duration: 0.2 }} className="group relative overflow-hidden backdrop-blur-sm bg-white/[0.03] border border-white/10 p-6 mb-5 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300">
                           <div className="absolute -inset-px bg-gradient-to-r from-white/5 via-white/10 to-white/5 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300 pointer-events-none" />
-                          <div className="absolute top-4 right-4 text-4xl font-serif text-white/5 group-hover:text-white/10 transition-colors duration-300 pointer-events-none">"</div>
+                          <div className="absolute top-4 right-4 text-4xl font-serif text-white/5 group-hover:text-white/10 transition-colors duration-300 pointer-events-none">&rdquo;</div>
                           <div className="relative z-10">
                             <div className={`flex items-center gap-4 mb-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-white/20 to-white/5 backdrop-blur border border-white/10 text-white/90 flex items-center justify-center text-base font-semibold group-hover:from-white/25 group-hover:to-white/10 transition-all duration-300">
@@ -256,7 +256,7 @@ export default function HomePage() {
                       {testimonials.slice(10).map((item, i) => (
                         <motion.div key={i} whileHover={{ y: -4, scale: 1.01 }} transition={{ duration: 0.2 }} className="group relative overflow-hidden backdrop-blur-sm bg-white/[0.03] border border-white/10 p-6 mb-5 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300">
                           <div className="absolute -inset-px bg-gradient-to-r from-white/5 via-white/10 to-white/5 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300 pointer-events-none" />
-                          <div className="absolute top-4 right-4 text-4xl font-serif text-white/5 group-hover:text-white/10 transition-colors duration-300 pointer-events-none">"</div>
+                          <div className="absolute top-4 right-4 text-4xl font-serif text-white/5 group-hover:text-white/10 transition-colors duration-300 pointer-events-none">&rdquo;</div>
                           <div className="relative z-10">
                             <div className={`flex items-center gap-4 mb-4 ${isRTL ? "flex-row-reverse" : ""}`}>
                               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-white/20 to-white/5 backdrop-blur border border-white/10 text-white/90 flex items-center justify-center text-base font-semibold group-hover:from-white/25 group-hover:to-white/10 transition-all duration-300">
