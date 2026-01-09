@@ -117,7 +117,7 @@ export default async function LocaleLayout({
         <WebsiteJsonLd locale={locale} />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} ${lemonada.variable} font-body antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${lemonada.variable} ${direction === "rtl" ? "font-arabic" : "font-body"} antialiased`}
       >
         <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>

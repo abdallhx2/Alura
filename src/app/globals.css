@@ -100,12 +100,27 @@ body::before {
   font-family: var(--font-inter), sans-serif;
 }
 
+/* Arabic Typography - RTL */
+[dir="rtl"] .text-display,
+[dir="rtl"] .font-display {
+  font-family: var(--font-lemonada), sans-serif;
+}
+
+[dir="rtl"] .text-body,
+[dir="rtl"] .font-body {
+  font-family: var(--font-lemonada), sans-serif;
+}
+
 /* Section Numbering */
 .section-number {
   font-family: var(--font-playfair), serif;
   font-size: 0.875rem;
   letter-spacing: 0.25em;
   color: var(--muted);
+}
+
+[dir="rtl"] .section-number {
+  font-family: var(--font-lemonada), sans-serif;
 }
 
 /* Animations */

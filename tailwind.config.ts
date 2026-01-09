@@ -61,6 +61,10 @@ const config: Config = {
   				'var(--font-inter)',
   				'var(--font-lemonada)',
   				'sans-serif'
+  			],
+  			arabic: [
+  				'var(--font-lemonada)',
+  				'sans-serif'
   			]
   		},
   		letterSpacing: {
