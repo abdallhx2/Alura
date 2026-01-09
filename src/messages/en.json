@@ -208,5 +208,35 @@
   "marquee": {
     "services": "Elevating Brands • Crafting Stories • Building Legacies • Creating Impact • Defining Style • Shaping Visions",
     "tagline": "Fashion & Beauty • Lifestyle & Luxury • Art & Elegance • Vision & Passion • Creativity & Excellence • Dreams & Reality"
+  },
+  "faq": {
+    "title": "Common Questions",
+    "subtitle": "Everything you need to know about working with us",
+    "items": [
+      {
+        "question": "What services does ALOURA offer?",
+        "answer": "We provide comprehensive creative services including Creative Direction, Content Creation & Development, and Social Media Management. Our expertise spans fashion, beauty, and lifestyle brands, delivering end-to-end solutions from strategy to execution."
+      },
+      {
+        "question": "How long does a typical project take?",
+        "answer": "Project timelines vary based on scope and complexity. A social media campaign typically takes 2-4 weeks, while comprehensive brand development may require 6-8 weeks. We always provide detailed timelines during our initial consultation."
+      },
+      {
+        "question": "Do you work with brands outside Saudi Arabia?",
+        "answer": "Yes! While we're based in Saudi Arabia and deeply understand the Gulf market, we work with brands across the MENA region and internationally. Our expertise in cross-cultural communication helps brands connect with diverse audiences."
+      },
+      {
+        "question": "What makes ALOURA different from other agencies?",
+        "answer": "Our founder's 7+ years of hands-on experience in fashion and beauty, combined with our deep understanding of the Saudi market, sets us apart. We don't just create content—we craft experiences that resonate with your specific audience."
+      },
+      {
+        "question": "How do we start working together?",
+        "answer": "Simply reach out through our contact form or email. We'll schedule a discovery call to understand your brand, goals, and vision. From there, we'll create a customized proposal tailored to your specific needs."
+      },
+      {
+        "question": "What industries do you specialize in?",
+        "answer": "We specialize in fashion, beauty, lifestyle, and luxury brands. Our portfolio includes work with clothing brands, perfume houses, beauty salons, restaurants, and personal brands across various sectors."
+      }
+    ]
   }
 }

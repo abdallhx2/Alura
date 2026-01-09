@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display, Noto_Kufi_Arabic, Amiri } from "next/font/google";
+import { Inter, Playfair_Display, Lemonada } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -7,6 +7,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/seo/JsonLd";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import "../globals.css";
 
 const inter = Inter({
@@ -19,16 +20,10 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-const notoKufi = Noto_Kufi_Arabic({
+const lemonada = Lemonada({
   subsets: ["arabic"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-noto-kufi",
-});
-
-const amiri = Amiri({
-  subsets: ["arabic"],
-  weight: ["400", "700"],
-  variable: "--font-amiri",
+  variable: "--font-lemonada",
 });
 
 export function generateStaticParams() {
@@ -120,8 +115,9 @@ export default async function LocaleLayout({
         <WebsiteJsonLd locale={locale} />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} ${notoKufi.variable} ${amiri.variable} font-body antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${lemonada.variable} font-body antialiased`}
       >
+        <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           <LenisProvider>
             <Header />

@@ -1,44 +1,122 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        muted: "var(--muted)",
-        accent: "var(--accent)",
-      },
-      fontFamily: {
-        display: ["var(--font-playfair)", "var(--font-amiri)", "serif"],
-        body: ["var(--font-inter)", "var(--font-noto-kufi)", "sans-serif"],
-      },
-      letterSpacing: {
-        widest: "0.25em",
-        ultra: "0.35em",
-      },
-      animation: {
-        marquee: "marquee var(--duration) linear infinite",
-        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
-      },
-      keyframes: {
-        marquee: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(calc(-100% - var(--gap)))" },
-        },
-        "marquee-vertical": {
-          from: { transform: "translateY(0)" },
-          to: { transform: "translateY(calc(-100% - var(--gap)))" },
-        },
-      },
-    },
+  	extend: {
+  		colors: {
+  			background: 'hsl(var(--background))',
+  			foreground: 'hsl(var(--foreground))',
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			primary: {
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			secondary: {
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			chart: {
+  				'1': 'hsl(var(--chart-1))',
+  				'2': 'hsl(var(--chart-2))',
+  				'3': 'hsl(var(--chart-3))',
+  				'4': 'hsl(var(--chart-4))',
+  				'5': 'hsl(var(--chart-5))'
+  			}
+  		},
+  		fontFamily: {
+  			display: [
+  				'var(--font-playfair)',
+  				'var(--font-lemonada)',
+  				'serif'
+  			],
+  			body: [
+  				'var(--font-inter)',
+  				'var(--font-lemonada)',
+  				'sans-serif'
+  			]
+  		},
+  		letterSpacing: {
+  			widest: '0.25em',
+  			ultra: '0.35em'
+  		},
+  		animation: {
+  			marquee: 'marquee var(--duration) linear infinite',
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			first: 'moveVertical 30s ease infinite',
+  			second: 'moveInCircle 20s reverse infinite',
+  			third: 'moveInCircle 40s linear infinite',
+  			fourth: 'moveHorizontal 40s ease infinite',
+  			fifth: 'moveInCircle 20s ease infinite'
+  		},
+  		keyframes: {
+  			marquee: {
+  				from: {
+  					transform: 'translateX(0)'
+  				},
+  				to: {
+  					transform: 'translateX(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			'marquee-vertical': {
+  				from: {
+  					transform: 'translateY(0)'
+  				},
+  				to: {
+  					transform: 'translateY(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			moveHorizontal: {
+  				'0%': { transform: 'translateX(-50%) translateY(-10%)' },
+  				'50%': { transform: 'translateX(50%) translateY(10%)' },
+  				'100%': { transform: 'translateX(-50%) translateY(-10%)' }
+  			},
+  			moveInCircle: {
+  				'0%': { transform: 'rotate(0deg)' },
+  				'50%': { transform: 'rotate(180deg)' },
+  				'100%': { transform: 'rotate(360deg)' }
+  			},
+  			moveVertical: {
+  				'0%': { transform: 'translateY(-50%)' },
+  				'50%': { transform: 'translateY(50%)' },
+  				'100%': { transform: 'translateY(-50%)' }
+  			}
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		}
+  	}
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 
 export default config;

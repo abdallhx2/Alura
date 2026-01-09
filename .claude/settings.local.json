@@ -12,7 +12,10 @@
       "Bash(powershell -Command:*)",
       "Bash(dir:*)",
       "Bash(del \"d:\\\\PrimaryProject\\\\lura\\\\src\\\\app\\\\favicon.ico\")",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(findstr:*)",
+      "Bash(ffprobe:*)"
     ]
   }
 }

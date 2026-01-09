@@ -37,10 +37,7 @@ export default function Header() {
           </Link>
 
           {/* Language Switcher - Visible on all screens */}
-          <div className="flex items-center gap-12">
-            <div className="hidden md:block h-4 w-[1px] bg-white/20" />
-            <LanguageSwitcher />
-          </div>
+          <LanguageSwitcher />
         </nav>
       </div>
     </header>

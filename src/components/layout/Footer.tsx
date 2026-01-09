@@ -21,7 +21,7 @@ export default function Footer() {
             <div className="md:col-span-2">
               <Link
                 href={`/${locale}`}
-                className="text-3xl font-display tracking-ultra uppercase block mb-4"
+                className="text-4xl md:text-5xl font-display tracking-ultra uppercase block mb-4"
               >
                 ALOURA
               </Link>
@@ -70,19 +70,15 @@ export default function Footer() {
 
       {/* Separate White Footer Bar */}
       <div className="bg-white text-black py-6 border-t border-gray-100">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
-          <p>© 2025 ALOURA. {t("common.allRights")}</p>
-          <div className="flex items-center gap-1">
-            <span>{t("common.developedBy")}</span>
-            <a
-              href="https://an1.space"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold hover:opacity-75 transition-all"
-            >
-              {locale === "ar" ? "عبدالله الحسني" : "Abdullah Al-Hasani"}
-            </a>
-          </div>
+        <div className="container mx-auto px-6 flex justify-center items-center text-xs md:text-sm">
+          <a
+            href="https://an1.space"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-75 transition-all"
+          >
+            {locale === "ar" ? "التصميم والتطوير تم من قبل عبدالله الحسني" : "Designed and Developed by Abdullah Al-Hasani"}
+          </a>
         </div>
       </div>
     </>

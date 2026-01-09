@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MeshGradient } from "@/components/ui/MeshGradient";
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+import { trackContactFormSubmission } from "@/components/analytics/GoogleAnalytics";
 
 interface CTASectionProps {
     locale: string;
@@ -15,21 +16,47 @@ interface CTASectionProps {
         phonePlaceholder: string;
         messagePlaceholder: string;
         sendButton: string;
+        sending?: string;
+        success?: string;
+        error?: string;
     };
 }
 
-export function CTASection({ translations }: CTASectionProps) {
+export function CTASection({ translations, isRTL }: CTASectionProps) {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         phone: "",
         message: "",
     });
+    const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission
-        console.log("Form submitted:", formData);
+        setStatus("sending");
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                trackContactFormSubmission({ name: formData.name, email: formData.email });
+                setFormData({ name: "", email: "", phone: "", message: "" });
+                setTimeout(() => setStatus("idle"), 5000);
+            } else {
+                setStatus("error");
+                setTimeout(() => setStatus("idle"), 5000);
+            }
+        } catch {
+            setStatus("error");
+            setTimeout(() => setStatus("idle"), 5000);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -39,12 +66,45 @@ export function CTASection({ translations }: CTASectionProps) {
         }));
     };
 
-    return (
-        <section className="py-20 md:py-32 relative overflow-hidden">
-            {/* Mesh Gradient Background */}
-            <MeshGradient color="#333333" />
+    const getButtonText = () => {
+        switch (status) {
+            case "sending":
+                return translations.sending || (isRTL ? "جارٍ الإرسال..." : "Sending...");
+            case "success":
+                return translations.success || (isRTL ? "تم الإرسال بنجاح!" : "Sent Successfully!");
+            case "error":
+                return translations.error || (isRTL ? "حدث خطأ" : "Error occurred");
+            default:
+                return translations.sendButton;
+        }
+    };
 
-            <div className="container mx-auto px-6 relative z-10">
+    const getButtonStyles = () => {
+        switch (status) {
+            case "success":
+                return "bg-green-500 border-green-500 text-white";
+            case "error":
+                return "bg-red-500 border-red-500 text-white";
+            default:
+                return "bg-white text-black hover:bg-black hover:text-white border-white";
+        }
+    };
+
+    return (
+        <BackgroundGradientAnimation
+            gradientBackgroundStart="rgb(20, 20, 20)"
+            gradientBackgroundEnd="rgb(0, 0, 0)"
+            firstColor="50, 50, 50"
+            secondColor="80, 80, 80"
+            thirdColor="40, 40, 40"
+            fourthColor="60, 60, 60"
+            fifthColor="30, 30, 30"
+            pointerColor="100, 100, 100"
+            containerClassName="!h-auto py-20 md:py-32"
+            interactive={false}
+        >
+            <section id="cta-section" className="relative z-50">
+                <div className="container mx-auto px-6">
                 {/* Heading */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -53,10 +113,10 @@ export function CTASection({ translations }: CTASectionProps) {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12 md:mb-16"
                 >
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display uppercase tracking-widest text-white leading-none mb-6">
+                    <h2 className={`font-display uppercase tracking-widest text-white leading-none mb-6 ${isRTL ? "text-4xl sm:text-5xl md:text-6xl lg:text-7xl" : "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"}`}>
                         {translations.heading}
                     </h2>
-                    <p className="text-white/70 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+                    <p className={`text-white/70 max-w-2xl mx-auto ${isRTL ? "text-base sm:text-lg md:text-xl" : "text-sm sm:text-base md:text-lg"}`}>
                         {translations.subheading}
                     </p>
                 </motion.div>
@@ -79,7 +139,8 @@ export function CTASection({ translations }: CTASectionProps) {
                                 onChange={handleChange}
                                 placeholder={translations.namePlaceholder}
                                 required
-                                className="w-full bg-transparent border border-white/30 text-white px-6 py-4 focus:border-white outline-none transition-colors placeholder:text-white/40 text-base"
+                                disabled={status === "sending"}
+                                className="w-full bg-transparent border border-white/30 text-white px-6 py-4 focus:border-white outline-none transition-colors placeholder:text-white/40 text-base disabled:opacity-50"
                             />
                         </div>
 
@@ -92,7 +153,8 @@ export function CTASection({ translations }: CTASectionProps) {
                                 onChange={handleChange}
                                 placeholder={translations.emailPlaceholder}
                                 required
-                                className="w-full bg-transparent border border-white/30 text-white px-6 py-4 focus:border-white outline-none transition-colors placeholder:text-white/40 text-base"
+                                disabled={status === "sending"}
+                                className="w-full bg-transparent border border-white/30 text-white px-6 py-4 focus:border-white outline-none transition-colors placeholder:text-white/40 text-base disabled:opacity-50"
                             />
                             <input
                                 type="tel"
@@ -100,7 +162,8 @@ export function CTASection({ translations }: CTASectionProps) {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 placeholder={translations.phonePlaceholder}
-                                className="w-full bg-transparent border border-white/30 text-white px-6 py-4 focus:border-white outline-none transition-colors placeholder:text-white/40 text-base"
+                                disabled={status === "sending"}
+                                className="w-full bg-transparent border border-white/30 text-white px-6 py-4 focus:border-white outline-none transition-colors placeholder:text-white/40 text-base disabled:opacity-50"
                             />
                         </div>
 
@@ -112,8 +175,9 @@ export function CTASection({ translations }: CTASectionProps) {
                                 onChange={handleChange}
                                 placeholder={translations.messagePlaceholder}
                                 required
+                                disabled={status === "sending"}
                                 rows={6}
-                                className="w-full bg-transparent border border-white/30 text-white px-6 py-4 focus:border-white outline-none transition-colors placeholder:text-white/40 resize-none text-base"
+                                className="w-full bg-transparent border border-white/30 text-white px-6 py-4 focus:border-white outline-none transition-colors placeholder:text-white/40 resize-none text-base disabled:opacity-50"
                             />
                         </div>
 
@@ -121,14 +185,16 @@ export function CTASection({ translations }: CTASectionProps) {
                         <div className="flex justify-center">
                             <button
                                 type="submit"
-                                className="px-12 py-4 bg-white text-black font-display uppercase tracking-widest hover:bg-black hover:text-white border border-white transition-all duration-300 text-sm"
+                                disabled={status === "sending"}
+                                className={`px-12 py-4 font-display uppercase tracking-widest border transition-all duration-300 text-sm disabled:cursor-not-allowed ${getButtonStyles()}`}
                             >
-                                {translations.sendButton}
+                                {getButtonText()}
                             </button>
                         </div>
                     </form>
                 </motion.div>
-            </div>
-        </section>
+                </div>
+            </section>
+        </BackgroundGradientAnimation>
     );
 }

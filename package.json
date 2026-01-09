@@ -12,7 +12,9 @@
     "@motionone/utils": "^10.18.0",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
+    "@studio-freight/react-lenis": "^0.0.47",
     "@types/three": "^0.182.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cobe": "^0.6.5",
     "framer-motion": "^12.23.26",
@@ -22,8 +24,9 @@
     "next-intl": "^4.7.0",
     "react": "^18",
     "react-dom": "^18",
-    "resend": "^6.6.0",
+    "resend": "^6.7.0",
     "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7",
     "three": "^0.182.0"
   },
   "devDependencies": {

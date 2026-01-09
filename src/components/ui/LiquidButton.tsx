@@ -25,25 +25,31 @@ const BW_COLORS: Colors = {
 };
 
 type LiquidButtonProps = {
-  href: string;
+  href?: string;
+  scrollTo?: string;
   children: React.ReactNode;
   className?: string;
 };
 
 export const LiquidButton: React.FC<LiquidButtonProps> = ({
   href,
+  scrollTo,
   children,
   className = '',
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  return (
-    <Link
-      href={href}
-      className={`relative inline-block group ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+  const handleClick = () => {
+    if (scrollTo) {
+      const element = document.getElementById(scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const buttonContent = (
+    <>
       {/* Outer glow effect */}
       <div className='absolute w-[120%] h-[140%] top-[5%] left-1/2 -translate-x-1/2 filter blur-[15px] opacity-60'>
         <span className='absolute inset-0 rounded-lg bg-neutral-400 filter blur-[5px]'></span>
@@ -69,6 +75,31 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
       <span className='absolute inset-0 flex items-center justify-center px-8 py-4 text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white group-hover:text-neutral-200 transition-colors z-10'>
         {children}
       </span>
+    </>
+  );
+
+  if (scrollTo) {
+    return (
+      <button
+        type="button"
+        onClick={handleClick}
+        className={`relative inline-block group ${className}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {buttonContent}
+      </button>
+    );
+  }
+
+  return (
+    <Link
+      href={href || '#'}
+      className={`relative inline-block group ${className}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {buttonContent}
     </Link>
   );
 };
